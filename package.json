@@ -1,0 +1,21 @@
+{
+  "name": "coffee-graphviz",
+  "version": "1.0.0",
+  "description": "graphviz based on coffeescript",
+  "main": "graphviz.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graphviz",
+    "graph",
+    "coffeescript",
+    "coffee",
+    "script"
+  ],
+  "author": "sagax",
+  "license": "ISC",
+  "dependencies": {
+    "coffeescript": "2.3.2"
+  }
+}

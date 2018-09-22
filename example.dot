@@ -1,0 +1,91 @@
+digraph G {
+  node [
+    resolution = "200";
+    fontsize = "10";
+    fontname = "Free Mono Bold";
+    fontcolor = "gray";
+    color = "gray";
+    shape = "record";
+  ];
+  edge [
+    color = "gray";
+    arrowtail = "odot";
+    arrowhead = "vee";
+    dir = "both";
+    arrowsize = "0.3";
+    fontsize = "10";
+    fontname = "Free Mono Bold";
+  ];
+  graph [
+    overlap = "false";
+    splines = "true";
+    bgcolor = "white";
+    dpi = "120";
+    rankdir = "LR";
+    pad = "1";
+  ];
+  "user" [
+    label = "User";
+    color = "deepskyblue4";
+    fontcolor = "white";
+    style = "filled";
+  ];
+  "user" -> "item" [ color = deepskyblue4; fontcolor = white;];
+  "user" -> "message" [ color = deepskyblue4; fontcolor = white;];
+  "user" -> "legal_person" [ color = deepskyblue4; fontcolor = white;];
+  "user 2" [
+    label = "User";
+    color = "deepskyblue4";
+    fontcolor = "white";
+    style = "filled";
+  ];
+  "legal_person" [
+    label = "Legal person";
+    color = "deepskyblue4";
+    fontcolor = "white";
+    style = "filled";
+  ];
+  "item" [
+    label = "Item | {:field 1\l
+:field 2\l
+:field 3\l
+}";    color = "deepskyblue4";
+    fontcolor = "white";
+    style = "filled";
+  ];
+  "item" -> "user 2" [ color = deepskyblue4; fontcolor = white;];
+  "message" [
+    label = "Message";
+    color = "deepskyblue4";
+    fontcolor = "white";
+    style = "filled";
+  ];
+  "language" [
+    label = "Language | {:ru\l
+:en\l
+}";    color = "deepskyblue4";
+    fontcolor = "white";
+    style = "filled";
+  ];
+  "uiux" -> "language" [ color = deepskyblue4; fontcolor = white;];
+  "uiux" [
+    label = "UI/UX";
+    color = "deepskyblue4";
+    fontcolor = "white";
+    style = "filled";
+  ];
+  "countries" [
+    label = "Countries";
+    color = "deepskyblue4";
+    fontcolor = "white";
+    style = "filled";
+  ];
+  "countries" -> "addresses" [ color = deepskyblue4; fontcolor = white;];
+  "addresses" [
+    label = "Addresses";
+    color = "deepskyblue4";
+    fontcolor = "white";
+    style = "filled";
+  ];
+}
+
