@@ -59,9 +59,7 @@ addresses = object "addresses", {
 
 
 countries[">"] addresses
-user[">"] item
-user[">"] message
-user[">"] legal_person
+user[">"] [item, message, legal_person]
 language["<"] uiux
 
 item.options.table = [
