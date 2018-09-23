@@ -12,22 +12,44 @@ dotdoc.object = (name, options, style) ->
     _object.style = style
 
   _object[">"] = (__object, __line) ->
-    robject = Object.create null
-    robject["object"] = __object
-    if __line
-      robject["line"] = __line
+    fn = (item) ->
+      robject = Object.create null
+      robject["object"] = item
+      if __line
+        robject["line"] = __line
 
-    _object.relations_in.push robject
-    return
+      _object.relations_in.push robject
+      return
+
+    if Array.isArray __object
+      __object.forEach (item) ->
+        fn item
+        return
+
+    else
+      fn __object
+
+    _object
 
   _object["<"] = (__object, __line) ->
-    robject = Object.create null
-    robject["object"] = __object
-    if __line
-      robject["line"] = __line
+    fn = (item) ->
+      robject = Object.create null
+      robject["object"] = __object
+      if __line
+        robject["line"] = __line
 
-    _object.relations_out.push robject
-    return
+      _object.relations_out.push robject
+      return
+
+    if Array.isArray __object
+      __object.forEach (item) ->
+        fn item
+        return
+
+    else
+      fn __object
+
+    _object
 
   _object.clone = (_name, _label, with_relations) ->
     with_relations = with_relations or false
